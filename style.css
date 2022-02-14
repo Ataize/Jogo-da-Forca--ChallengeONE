@@ -1,0 +1,155 @@
+
+
+body{
+  width: 100vw;
+  height: 90vw;
+  margin-top: 10px;
+  background-color: lightblue;
+  justify-content: center;
+  
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-style: oblique;
+  color: purple;
+}
+
+.titulo {
+  padding: 15px;
+  width: 30vw;
+  font-style: oblique;
+  color: purple;
+  display: inline;
+  justify-content: center;
+ }
+ .text-input {
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  padding: 0.5em;
+  width: 20%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+#palavra-secreta{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  
+}
+.layout-letras{
+  width: 16px;
+  text-align: center;
+  border: 2px solid;
+  color: purple;
+  padding: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.btn {
+  border: 0;
+  color: white;
+  font-weight: bold;
+  background-color: purple;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0.5em;
+}
+ .teclas button {
+ color: white;
+ font-weight: bold;
+ background-color: purple;
+ text-align: center;
+ width: 24px;
+ height: 24px;
+ margin: 2px;
+ display: inline-block;
+
+ }
+ #btnReiniciar {
+  border: 0;
+  color: white;
+  font-weight: bold;
+  background-color: purple;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0.5em;
+ }
+.invisivel{
+  display: none;
+}
+ .rdp {
+  text-align: center;
+ }
+ @media (min-width: 321px){
+    .teclas button{
+        width: 25px;
+        height: 25px;
+    }
+    #categoria{
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 376px){
+    .teclas button{
+        width: 30px;
+        height: 30px;
+    }
+    #palavra-secreta{
+        font-size: 1.3em;
+    }
+    .letras{
+        width: 18px;
+    }
+
+    #categoria{
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 426px){
+    .teclas button{
+        width: 36px;
+        height: 36px;
+    }
+    #palavra-secreta{
+        font-size: 1.5em;
+    }
+    .letras{
+        width: 20px;
+    }
+
+    #categoria{
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 769px){
+    .teclas button{
+        width: 30px;
+        height: 30px;
+        font-size: 1,5em;
+    }
+    #palavra-secreta{
+        font-size: 1.5em;
+    }
+    .letras{
+        width: 20px;
+    }
+
+    #categoria{
+        font-size: 2em;
+    }
+}
