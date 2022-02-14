@@ -4,12 +4,12 @@
 	var listaDinamica = [];
 	var erros = 6;
 	var letrasDaPalavra;
+	var adicionarPalavra = document.querySelector("#nova-palavra");
 
 desenhaTabuleiro();
 
 sortearPalavra();
-//Para adicionar uma nova palavra:
-var adicionarPalavra = document.querySelector("#nova-palavra");
+
 adicionarPalavra.addEventListener("click", function(){
 	event.preventDefault();
 	var palavraAdicionada = document.querySelector("#input-nova-palavra");
@@ -93,7 +93,7 @@ function comparaLetra(letra){
 
 	if(vitoria == true){
 		erros = 0;
-		alert("Parabéns!Você ganhou!");
+		alert("Parabéns! Você ganhou!");
 	}
 }
 function desenhaForca()	{
@@ -126,18 +126,3 @@ JogarNovamente.addEventListener("click", function(){
 	location.reload();
 })
 
-
-
-/*
-
-ar botaoIniciar = document.querySelector("#iniciar-jogo");
-//var novaPalavra = document.querySelector("#input-nova-palavra").value;
-
-botaoIniciar.addEventListener("click", function(){
-	desenhaTabuleiro();
-	sortearPalvra();
-	mostrarPalavra();
-	
-});	
-
-	*/
