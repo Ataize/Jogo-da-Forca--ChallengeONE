@@ -1,11 +1,13 @@
 
-	var palavras = ["PAPAGAIO", "GIRAFA", "CORUJA", "CARNEIRO", "OVELHA", "FORMIGA", "ELEFANTE", "ORNITORRINCO", "GAIVOTA", "ABELHA"]; 
+	var palavras = ["PAPAGAIO", "GIRAFA", "CORUJA", "CARNEIRO", "OVELHA", "FORMIGA", "ELEFANTE", "ORNITORRINCO", "GAIVOTA", "ABELHA","CACHORRO", "COELHO", "MORCEGO"]; 
 	var palavraSorteada;
 	var listaDinamica = [];
 	var erros = 6;
 	var letrasDaPalavra;
 	var adicionarPalavra = document.querySelector("#nova-palavra");
-
+	var letraErrada= [];
+	
+	
 desenhaTabuleiro();
 
 sortearPalavra();
@@ -15,9 +17,14 @@ adicionarPalavra.addEventListener("click", function(){
 	var palavraAdicionada = document.querySelector("#input-nova-palavra");
 	var palavraNova = palavraAdicionada.value;
 	palavras.push(palavraNova);
-	alert("A palavra " + palavraNova +" foi adicionada com sucesso!");
+	if(palavraNova == 0){
+		alert("Por favor, adicione uma palavra válida!")
+	} else {
+		alert("A palavra " + palavraNova +" foi adicionada com sucesso!");
 	palavraAdicionada.classList.add("invisivel");
 	adicionarPalavra.classList.add("invisivel");
+	}
+	
 
 });
 function sortearPalavra() {
@@ -60,16 +67,17 @@ function mudarStyleLetra(tecla){
 }
 
 function comparaLetra(letra){
-
+	var letraErrada = document.querySelector(".letras-incorretas");
 	var posicaoLetra = letrasDaPalavra.indexOf(letra)
 	
 		if(posicaoLetra < 0){
 			erros--
-		//aparecer a letra errada
+				letraErrada.innerHTML = letraErrada.innerHTML + "<div class='letras-incorretas'>" + letra + "</div>"; 
+		
 		desenhaForca();
 
 		if(erros == 0) {
-			alert("OPS! Não foi dessa vez... A Palavra Secreta era " + palavraSorteada);
+			vocePerdeu();
 		}
 		
 	}
@@ -93,7 +101,7 @@ function comparaLetra(letra){
 
 	if(vitoria == true){
 		erros = 0;
-		alert("Parabéns! Você ganhou!");
+		voceGanhou();
 	}
 }
 function desenhaForca()	{
@@ -121,6 +129,20 @@ function desenhaForca()	{
 
 	}
 }
+function voceGanhou() {
+	var titulo = document.querySelector("h2");
+	var texto = document.createTextNode("Parabéns, você venceu!");
+	titulo.appendChild(texto);
+	titulo.style.color = "green";
+}
+function vocePerdeu() {
+	var titulo = document.querySelector("h2");
+	var texto = document.createTextNode("Você perdeu! A palavra era " + palavraSorteada);
+	titulo.appendChild(texto);
+	titulo.style.color = "red";
+
+}
+
 var JogarNovamente = document.querySelector("#btnReiniciar")
 JogarNovamente.addEventListener("click", function(){
 	location.reload();

@@ -4,12 +4,12 @@ function desenhaTabuleiro() {
 	var pincel = tela.getContext('2d')
 
 	pincel.fillStyle = "lightblue";
-	pincel.fillRect(30, 0, 800, 400);
+	pincel.fillRect(30, 0, 800, 350);
 
 	pincel.fillStyle = "#F4A460";
-	pincel.fillRect(350, 40, 30, 400);
+	pincel.fillRect(350, 40, 30, 300);
 	pincel.fillRect(380, 60, 200, 30);
-	pincel.fillRect(330, 440, 250, 10);
+	pincel.fillRect(330, 340, 250, 10);
 
 	pincel.fillStyle = "#CD853F";
 	pincel.fillRect(540, 90, 5, 40);
