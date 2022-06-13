@@ -12,21 +12,20 @@ desenhaTabuleiro();
 
 sortearPalavra();
 
-adicionarPalavra.addEventListener("click", function(){
-	event.preventDefault();
-	var palavraAdicionada = document.querySelector("#input-nova-palavra");
-	var palavraNova = palavraAdicionada.value;
-	palavras.push(palavraNova);
-	if(palavraNova == 0){
-		alert("Por favor, adicione uma palavra válida!")
-	} else {
-		alert("A palavra " + palavraNova +" foi adicionada com sucesso!");
-	palavraAdicionada.classList.add("invisivel");
-	adicionarPalavra.classList.add("invisivel");
-	}
-	
+// adicionarPalavra.addEventListener("click", function(){
+// 	event.preventDefault();
+// 	var palavraAdicionada = document.querySelector("#input-nova-palavra");
+// 	var palavraNova = palavraAdicionada.value;
+// 	palavras.push(palavraNova);
+// 	if(palavraNova == 0){
+// 		alert("Por favor, adicione uma palavra válida!")
+// 	} else {
+// 		alert("A palavra " + palavraNova +" foi adicionada com sucesso!");
+// 	palavraAdicionada.classList.add("invisivel");
+// 	adicionarPalavra.classList.add("invisivel");
+// 	}
 
-});
+// });
 function sortearPalavra() {
 	var minhaPalavra = parseInt(Math.random() * palavras.length);
 	palavraSorteada = palavras[minhaPalavra];
